@@ -1,0 +1,91 @@
+body {
+  background-color: #fff;
+}
+
+.in {
+  height: 60px;
+  width: 60px;
+  border: none;
+  position: relative;
+  text-align: center;
+  margin: auto 0;
+  color: #fff;
+  border-radius: 5%;
+}
+#m1 {
+  background-color: violet;
+  z-index: 5;
+
+  animation: city 3s ease 0s infinite normal;
+  /* animation-name: city;
+  animation-timing-function: ease;
+  animation-duration: 3s;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: normal; */
+}
+#m2 {
+  background-color: blueviolet;
+  z-index: 4;
+  bottom: 60px;
+
+  animation: verna 3s ease 0s infinite normal;
+}
+#v1 {
+  background-color: dodgerblue;
+  z-index: 3;
+  bottom: 120px;
+
+  animation: apache 3s ease 0s infinite normal;
+}
+#v2 {
+  background-color: #ff69b4;
+  z-index: 2;
+  bottom: 180px;
+
+  animation: activa 3s ease 0s infinite normal;
+}
+
+@keyframes city {
+  from {
+    margin-left: 0px;
+  }
+  to {
+    margin-left: 10px;
+    box-shadow: 4px 4px 8px #000;
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes verna {
+  from {
+    margin-left: 0px;
+  }
+  to {
+    margin-left: 70px;
+    box-shadow: 4px 4px 8px #000;
+    transform: rotate(20deg);
+  }
+}
+
+@keyframes apache {
+  from {
+    margin-left: 0px;
+  }
+  to {
+    margin-left: 130px;
+    box-shadow: 4px 4px 8px #000;
+    transform: rotate(30deg);
+  }
+}
+
+@keyframes activa {
+  from {
+    margin-left: 0px;
+  }
+  to {
+    margin-left: 190px;
+    box-shadow: 4px 4px 8px #000;
+    transform: rotate(40deg);
+  }
+}
