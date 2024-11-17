@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagonal Numbers Sum Animation</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .number {
+            position: absolute;
+            font-size: 3em;
+            animation: moveToCenter 1.5s ease forwards;
+        }
+
+        #number1 {
+            top: 20px;
+            left: 20px;
+            animation-delay: 0.5s; /* Start a little later */
+        }
+
+        #number2 {
+            bottom: 20px;
+            right: 20px;
+            animation-delay: 0.5s;
+        }
+
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4em;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        /* Keyframe animation to move to the center */
+        @keyframes moveToCenter {
+            to {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div id="number1" class="number">5</div>
+    <div id="number2" class="number">8</div>
+    <div id="sum" class="center"></div>
+</div>
+
+<script>
+    window.onload = function() {
+        const number1 = document.getElementById("number1");
+        const number2 = document.getElementById("number2");
+        const sumDisplay = document.getElementById("sum");
+
+        // Calculate and display the sum after the animation
+        setTimeout(() => {
+            const num1 = parseInt(number1.textContent);
+            const num2 = parseInt(number2.textContent);
+            const sum = num1 + num2;
+
+            // Hide individual numbers
+            number1.style.opacity = 0;
+            number2.style.opacity = 0;
+
+            // Show the sum in the center
+            sumDisplay.textContent = sum;
+            sumDisplay.style.opacity = 1;
+        }, 1500); // Delay matches the animation duration
+    }
+</script>
+
+</body>
+</html>
+<!-- 
+Explanation of Changes
+
+1. CSS Keyframe Animation: The @keyframes moveToCenter animation moves both numbers to the center by setting the top, left, and transform properties in the to keyframe.
+
+
+2. Animation Timing: Each number starts moving after a 0.5s delay (animation-delay: 0.5s), and the animation lasts 1.5 seconds.
+
+
+3. JavaScript Timing: After the animation completes (1.5 seconds), JavaScript calculates the sum, hides the individual numbers, and displays the sum in the center with a fade-in effect.
+
+
+
+This results in a smoother, CSS-based animation where each number moves diagonally toward the center and then transforms into their sum. -->
