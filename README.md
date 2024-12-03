@@ -1,2 +1,2 @@
-![banner](logo.png)
+![banner](https://github.com/vishalkashyap01/Animations/blob/main/logo.jpg)
 # Vedika Tech Labs animation...
